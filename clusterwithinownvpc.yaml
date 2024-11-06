@@ -2,9 +2,8 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: my-cluster
-  region: us-east-1 # Choose your desired region
-
+  name: expense
+  region: us-east-1
 vpc:
   id: vpc-0c1644902d274d775  # Use your existing VPC ID
   subnets:
@@ -13,8 +12,8 @@ vpc:
         id: subnet-0326e9a1e993ebef7  # Specify public subnet ID
       us-east-1b:
         id: subnet-07ec2ffbc1580d0c9  # Specify public subnet ID
-
-nodeGroups:
-  - name: eks-nodegroup
-    instanceType: t3.medium
-    desiredCapacity: 2
+managedNodeGroups:
+- name: expense
+  instanceType: m5.large
+  desiredCapacity: 3
+  Spot: true
