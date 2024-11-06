@@ -14,6 +14,6 @@ vpc:
         id: subnet-07ec2ffbc1580d0c9  # Specify public subnet ID
 managedNodeGroups:
 - name: expense
-  instanceType: m5.large
+  instanceType: t3.medium
   desiredCapacity: 3
   Spot: true
